@@ -1,6 +1,8 @@
 
-# Simulations with Conditional and Total Probability  - Lab
+# Simulations with Conditional and Total Probability - Lab
 
+
+## Introduction
 In this lab , we shall run simulations for simple total probability problems. We shall solve these problems by hand and also perform random sampling from a defined probability distribution repeatedly to see if our calculated results match with the results of random simulations. 
 
 ## Objectives
@@ -8,19 +10,12 @@ You will be able to:
 * Perform simple random simulations using Numpy
 * Run simulations with conditional probabilities, total probability, and the product rule
 
-
-
 ## Exercise 1
 ### Part 1
 
 Suppose you have two bags of marbles. The first bag contains 6 white marbles and 4 black marbles. The second bag contains 3 white marbles and 7 black marbles. Now suppose you put the two bags in a box. Now if you close your eyes, grab a bag from the box, and then grab a marble from the bag, 
 
 **what is the probability that it is black**? 
-
-
-```python
-# Your solution here 
-```
 
 P(B) = P(CHOOSE BAG 1) × P(BLACK|CHOOSE Bag I)+ P(CHOOSE BAG 2) × P (BLACK|CHOOSE BAG 2)
 
