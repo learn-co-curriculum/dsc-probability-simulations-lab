@@ -1,14 +1,13 @@
 
-# Simulations with Conditional and Total Probability  - Lab
+# Simulations with Conditional and Total Probability - Lab
 
+## Introduction
 In this lab , we shall run simulations for simple total probability problems. We shall solve these problems by hand and also perform random sampling from a defined probability distribution repeatedly to see if our calculated results match with the results of random simulations. 
 
 ## Objectives
 You will be able to:
 * Perform simple random simulations using Numpy
 * Run simulations with conditional probabilities, total probability, and the product rule
-
-
 
 
 ## Exercise 1
@@ -61,13 +60,6 @@ bag1, bag2, box
 #          {'marbles': array(['black', 'white'], dtype='<U5'), 'probs': array([0.7, 0.3])}],
 #         dtype=object), 'probs': array([0.5, 0.5])})
 ```
-
-
-
-
-    (None, None, None)
-
-
 
 #### Create a function `sample_marble(box)` that randomly chooses a bag from the box and then randomly chooses a marble from the bag 
 
