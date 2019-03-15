@@ -17,7 +17,7 @@ Suppose you have two bags of marbles. The first bag contains 6 white marbles and
 
 **what is the probability that it is black**? 
 
-P(B) = P(CHOOSE BAG 1) × P(BLACK|CHOOSE Bag I)+ P(CHOOSE BAG 2) × P (BLACK|CHOOSE BAG 2)
+$P(B) = P(\text{CHOOSE BAG 1}) * P(\mid{BLACK} \mid \text{CHOOSE BAG 1})+ P(\text{CHOOSE BAG 2}) * P (\text{BLACK}\mid \text{CHOOSE BAG 2})$
 
 
 ```python
@@ -32,22 +32,20 @@ p_b
 
 
 
-The probability is 11/10 or 0.55
+The probability is 11/20 or 0.55
 
 ### Part 2
-runs a simple simulation to estimate the probability of drawing a marble of a particular color. Run the code and verify that it agrees with the by-hand computation. 
+Run a simple simulation to estimate the probability of drawing a marble of a particular color. Run the code and verify that it agrees with your computation done earlier.
 
 #### Perform following tasks:
 
-* Create dictionaries for bag1 and bag2 holding marble color and probability values as:
+* Create dictionaries for bag1 and bag2 holding marble color and probability values:
 
-    * **bag = {'marbles' : np.array(["color1", "color2"]), 'probs' : np.array([P(color1), P(color2)])}**
+    * **bag1 = {'marbles' : np.array(["color1", "color2"]), 'probs' : np.array([P(color1), P(color2)])}**
     
-    
-* Create a dictionary for box holding bags and their 
+* Create a dictionary for box holding bags and their probability values: 
 
     * **box  = {'bags' : np.array([bag1, bag2]), 'probs' : np.array([P(bag1),P(bag2)])}**
-    
     
 * Show the content of your dictionaries
 
@@ -105,7 +103,7 @@ sample_marble(box)
 
 
 
-#### Create another function `probability_of_colors(color, box, num_samples)` to get a given number of samples from `sample_marbles()` and computes the fraction of a marble of desired color
+#### Create another function `probability_of_colors(color, box, num_samples)` that gets a  given number of samples from `sample_marbles()` and computes the fraction of a marble of desired color
 
 
 ```python
@@ -116,7 +114,7 @@ def probability_of_color(color, box, num_samples=1000):
     return np.sum(marbles == color) / num_samples
 ```
 
-Now let's run our function in line with our original problem i.e. the probability of seeing a black marble by sampling form the box 100000 times. 
+Now let's run our function in line with our original problem, i.e. the probability of seeing a black marble by sampling form the box 100000 times. 
 
 
 ```python
@@ -136,27 +134,22 @@ probability_of_color("black", box, num_samples=100000)
 # Comment on your answer
 ```
 
-### Exercise 2 - More Marbles 
+## Exercise 2
 
 
-Suppose now we add a third color to the mix.  Bag 1 now contains 6 white marbles, 4 black marbles, and 5 gray marbles.  Bag 2 now contains 3 white marbles, 7 black marbles, and 5 gray marbles.  
+Suppose now we add a third color of marbles to the mix.  Bag 1 now contains 6 white marbles, 4 black marbles, and 5 gray marbles. Bag 2 now contains 3 white marbles, 7 black marbles, and 5 gray marbles.  
 
 **The probability of grabbing the first bag from the box is now TWICE the probability of grabbing the second bag.** 
 
 What is the probability of drawing a gray marble from the bag according to law of total probabilities?  
 
-## Solution: 
+### Solution: 
 
 Since there is a 1/3 probability of drawing a gray marble from each bag (3 bags in total), it seems like the desired probability should be 1/3 . Let's check this using the law of total probability.
 
-Let  G  be the event that we select a gray marble, and  B1  and  B2  be the events that we select Bags 1 and 2 from the box, respectively. We then have
+Let  G  be the event that we select a gray marble, and  $B_1$  and  $B_2$  be the events that we select Bags 1 and 2 from the box, respectively. We then have
 
-P(G)
-=P(G∣B1)P(B1)+P(G∣B2)P(B2)
-
-=1/3⋅2/3+1/3⋅1/3=2/9+1/9=3/9
-
-=1/3 = 0.33
+$P(G) =P(G\mid B_1)P(B_1)+P(G\mid B_2)P(B_2)=\dfrac{1}{3}*\dfrac{2}{3}+\dfrac{1}{3}*\dfrac{1}{3}=  \dfrac{2}{9}+\dfrac{1}{9}=\dfrac{3}{9} = \dfrac{1}{3}$ 
 
 
 #### Copy and paste the code from the exercise above and modify it to estimate the probability that you just computed and check your work.
@@ -202,4 +195,5 @@ probability_of_color("gray", box, num_samples=100000)
 
 ## Summary 
 
-In this lab , we looked at some more examples of simple problems using law of total probability. We also attempted to run simulations to solve these problems by continuous random sampling. We saw that we get almost the same results through random sampling as we do from solving mathematical equations. consider the difference in computation while running these simulations and calculating a simple formula. For much complex problems with larger datasets, having an understanding the underlying probabilities can help you solve a lot of optimization problems as we shall see ahead. 
+In this lab, you looked at some more examples of simple problems using law of total probability. You also ran some simulations to solve these problems by continuous random sampling. You learned that you get a result very close to the mathematical solution when using random sampling. This difference is due to randomness, and as your sample size rows you'll see that the difference becomes very small!
+For much complex problems with larger datasets, having an understanding the underlying probabilities can help you solve a lot of optimization problems as you'll learn later.
