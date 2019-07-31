@@ -24,6 +24,20 @@ Suppose you have two bags of marbles. The first bag contains 6 white marbles and
 
 The probability is 11/20 or 0.55
 
+
+```python
+# __SOLUTION__ 
+p_b = ((1/2)*(4/10)) + ((1/2)*(7/10))
+p_b
+```
+
+
+
+
+    0.55
+
+
+
 ### Part 2
 Run a simple simulation to estimate the probability of drawing a marble of a particular color. Run the code and verify that it agrees with your computation done earlier.
 
@@ -63,6 +77,40 @@ bag1, bag2, box
 
 
 ```python
+# __SOLUTION__ 
+import numpy as np
+bag1 = {'marbles' : np.array(["black", "white"]), 'probs' : np.array([4/10, 6/10])}
+bag2 = {'marbles' : np.array(["black", "white"]), 'probs' : np.array([7/10, 3/10])}
+box  = {'bags' : np.array([bag1, bag2]), 'probs' : np.array([1/2, 1/2])}
+
+bag1, bag2, box
+
+# ({'marbles': array(['black', 'white'], dtype='<U5'),
+#   'probs': array([0.4, 0.6])},
+
+#  {'marbles': array(['black', 'white'], dtype='<U5'),
+#   'probs': array([0.7, 0.3])},
+
+#  {'bags': array([{'marbles': array(['black', 'white'], dtype='<U5'), 'probs': array([0.4, 0.6])},
+#          {'marbles': array(['black', 'white'], dtype='<U5'), 'probs': array([0.7, 0.3])}],
+#         dtype=object), 'probs': array([0.5, 0.5])})
+```
+
+
+
+
+    ({'marbles': array(['black', 'white'], dtype='<U5'),
+      'probs': array([0.4, 0.6])},
+     {'marbles': array(['black', 'white'], dtype='<U5'),
+      'probs': array([0.7, 0.3])},
+     {'bags': array([{'marbles': array(['black', 'white'], dtype='<U5'), 'probs': array([0.4, 0.6])},
+             {'marbles': array(['black', 'white'], dtype='<U5'), 'probs': array([0.7, 0.3])}],
+            dtype=object), 'probs': array([0.5, 0.5])})
+
+
+
+
+```python
 def sample_marble(box):
     # randomly choose a bag 
    
@@ -77,6 +125,26 @@ def sample_marble(box):
 
 
 ```python
+# __SOLUTION__ 
+def sample_marble(box):
+    # randomly choose a bag 
+    bag = np.random.choice(box['bags'], p = box['probs'])
+    # randomly choose a marble 
+    return np.random.choice(bag['marbles'], p = bag['probs'])
+
+sample_marble(box)
+# 'black' OR 'white'
+```
+
+
+
+
+    'black'
+
+
+
+
+```python
 def probability_of_color(color, box, num_samples=1000):
     # get a bunch of marbles 
     # compute fraction of marbles of desired color 
@@ -84,6 +152,16 @@ def probability_of_color(color, box, num_samples=1000):
 ```
 
 Now let's run our function in line with our original problem, i.e. the probability of seeing a black marble by sampling form the box 100000 times. 
+
+
+```python
+# __SOLUTION__ 
+def probability_of_color(color, box, num_samples=1000):
+    # get a bunch of marbles 
+    marbles = np.array([sample_marble(box) for ii in range(num_samples)])
+    # compute fraction of marbles of desired color 
+    return np.sum(marbles == color) / num_samples
+```
 
 
 ```python
@@ -98,6 +176,20 @@ Now let's run our function in line with our original problem, i.e. the probabili
 # Comment on your answer
 ```
 
+
+```python
+# __SOLUTION__ 
+probability_of_color("black", box, num_samples=100000)
+# very close to 0.55
+```
+
+
+
+
+    0.54772
+
+
+
 ## Exercise 2
 
 
@@ -106,6 +198,12 @@ Suppose now we add a third color of marbles to the mix.  Bag 1 now contains 6 wh
 **The probability of grabbing the first bag from the box is now TWICE the probability of grabbing the second bag.** 
 
 What is the probability of drawing a gray marble from the bag according to law of total probabilities?  
+
+
+```python
+# __SOLUTION__ 
+# Comment on your answer
+```
 
 
 ```python
@@ -130,10 +228,52 @@ What is the probability of drawing a gray marble from the bag according to law o
 
 
 ```python
+# __SOLUTION__ 
+import numpy as np
+bag1 = {'marbles' : np.array(["black", "white", "gray"]), 'probs' : np.array([4/15, 6/15, 5/15])}
+bag2 = {'marbles' : np.array(["black", "white", "gray"]), 'probs' : np.array([7/15, 3/15, 5/15])}
+box  = {'bags' : np.array([bag1, bag2]), 'probs' : np.array([2/3, 1/3])}
+
+def sample_marble(box):
+    # randomly choose a bag 
+    bag = np.random.choice(box['bags'], p = box['probs'])
+    # randomly choose a marble 
+    return np.random.choice(bag['marbles'], p = bag['probs'])
+
+def probability_of_color(color, box, num_samples=1000):
+    # get a bunch of marbles 
+    marbles = np.array([sample_marble(box) for ii in range(num_samples)])
+    # compute fraction of marbles of desired color 
+    return np.sum(marbles == color) / num_samples
+```
+
+
+```python
 # Record your comments 
 ```
+
+
+```python
+# __SOLUTION__ 
+probability_of_color("gray", box, num_samples=100000)
+
+# Very close to 0.33
+```
+
+
+
+
+    0.33468
+
+
 
 ## Summary 
 
 In this lab, you looked at some more examples of simple problems using law of total probability. You also ran some simulations to solve these problems by continuous random sampling. You learned that you get a result very close to the mathematical solution when using random sampling. This difference is due to randomness, and as your sample size rows you'll see that the difference becomes very small!
 For much complex problems with larger datasets, having an understanding the underlying probabilities can help you solve a lot of optimization problems as you'll learn later.
+
+
+```python
+# __SOLUTION__ 
+# Record your comments 
+```
