@@ -19,10 +19,8 @@ Suppose you have two bags of marbles. The first bag contains 6 white marbles and
 
 
 ```python
-# Your solution here 
+# Your answer here
 ```
-
-The probability is 11/20 or 0.55
 
 ### Part 2
 Run a simple simulation to estimate the probability of drawing a marble of a particular color. Run the code and verify that it agrees with your computation done earlier.
@@ -90,12 +88,7 @@ Now let's run our function in line with our original problem, i.e. the probabili
 # probability_of_color("black", box, num_samples=100000)
 
 
-# very close to 0.55
-```
-
-
-```python
-# Comment on your answer
+# your answer should be very close to 0.55
 ```
 
 ## Exercise 2
@@ -106,11 +99,6 @@ Suppose now we add a third color of marbles to the mix.  Bag 1 now contains 6 wh
 **The probability of grabbing the first bag from the box is now TWICE the probability of grabbing the second bag.** 
 
 What is the probability of drawing a gray marble from the bag according to law of total probabilities?  
-
-
-```python
-# Your Solution here 
-```
 
 #### Copy and paste the code from the exercise above and modify it to estimate the probability that you just computed and check your work.
 
@@ -126,11 +114,6 @@ What is the probability of drawing a gray marble from the bag according to law o
 
 
 # Very close to 0.33
-```
-
-
-```python
-# Record your comments 
 ```
 
 ## Summary 
