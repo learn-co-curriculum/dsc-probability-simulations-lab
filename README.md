@@ -17,12 +17,13 @@ Suppose you have two bags of marbles. The first bag contains 6 white marbles and
 
 **what is the probability that it is black**? 
 
-$P(B) = P(\text{CHOOSE BAG 1}) * P(\mid{BLACK} \mid \text{CHOOSE BAG 1})+ P(\text{CHOOSE BAG 2}) * P (\text{BLACK}\mid \text{CHOOSE BAG 2})$
-
 
 ```python
+# P(BLACK) = P(CHOOSE BAG 1) * P(BLACK|CHOOSE BAG 1) + P(CHOOSE BAG 2) * P(BLACK|CHOOSE BAG 2)
 p_b = ((1/2)*(4/10)) + ((1/2)*(7/10))
 p_b
+
+# The probability is 11/20 or 0.55
 ```
 
 
@@ -31,8 +32,6 @@ p_b
     0.55
 
 
-
-The probability is 11/20 or 0.55
 
 ### Part 2
 Run a simple simulation to estimate the probability of drawing a marble of a particular color. Run the code and verify that it agrees with your computation done earlier.
@@ -129,11 +128,6 @@ probability_of_color("black", box, num_samples=100000)
 
 
 
-
-```python
-# Comment on your answer
-```
-
 ## Exercise 2
 
 
@@ -143,16 +137,22 @@ Suppose now we add a third color of marbles to the mix.  Bag 1 now contains 6 wh
 
 What is the probability of drawing a gray marble from the bag according to law of total probabilities?  
 
-### Solution: 
-
-Since there is a 1/3 probability of drawing a gray marble from each bag (3 bags in total), it seems like the desired probability should be 1/3 . Let's check this using the law of total probability.
-
-Let  G  be the event that we select a gray marble, and  $B_1$  and  $B_2$  be the events that we select Bags 1 and 2 from the box, respectively. We then have
-
-$P(G) =P(G\mid B_1)P(B_1)+P(G\mid B_2)P(B_2)=\dfrac{1}{3}*\dfrac{2}{3}+\dfrac{1}{3}*\dfrac{1}{3}=  \dfrac{2}{9}+\dfrac{1}{9}=\dfrac{3}{9} = \dfrac{1}{3}$ 
-
-
 #### Copy and paste the code from the exercise above and modify it to estimate the probability that you just computed and check your work.
+
+
+```python
+
+# Since there is a 1/3 probability of drawing a gray marble from each bag
+# (3 bags in total), it seems like the desired probability should be 1/3 
+# Let's check this using the law of total probability.
+# Let G be the event that we select a gray marble, 
+# and  $B_1$ and  $B_2$ be the events that we select Bags 1 and 2 from the box, respectively.
+# We then have P(G) = P(G| B_1)P(B_1)+P(G| B_2)P(B_2)=(1/3)*(2/3)+(1/3)*(1/3)
+#                   = (2/9)+(1/9)=(3/9)=(1/3)
+
+
+
+```
 
 
 ```python
@@ -187,11 +187,6 @@ probability_of_color("gray", box, num_samples=100000)
     0.33468
 
 
-
-
-```python
-# Record your comments 
-```
 
 ## Summary 
 
