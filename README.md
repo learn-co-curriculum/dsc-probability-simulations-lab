@@ -143,7 +143,7 @@ What is the probability of drawing a gray marble from the bag according to law o
 ```python
 
 # Since there is a 1/3 probability of drawing a gray marble from each bag
-# (3 bags in total), it seems like the desired probability should be 1/3 
+# (2 bags in total), it seems like the desired probability should be 1/3 
 # Let's check this using the law of total probability.
 # Let G be the event that we select a gray marble, 
 # and  $B_1$ and  $B_2$ be the events that we select Bags 1 and 2 from the box, respectively.
