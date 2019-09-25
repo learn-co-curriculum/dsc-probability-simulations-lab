@@ -3,11 +3,11 @@
 
 
 ## Introduction
-In this lab , we shall run simulations for simple total probability problems. We shall solve these problems by hand and also perform random sampling from a defined probability distribution repeatedly to see if our calculated results match with the results of random simulations. 
+In this lab, we shall run simulations for simple total probability problems. We shall solve these problems by hand and also perform random sampling from a defined probability distribution repeatedly to see if our calculated results match the results of random simulations. 
 
 ## Objectives
 You will be able to:
-* Perform simple random simulations using Numpy
+* Perform simple random simulations using `numpy`
 * Run simulations with conditional probabilities, total probability, and the product rule
 
 ## Exercise 1
@@ -48,7 +48,7 @@ Run a simple simulation to estimate the probability of drawing a marble of a par
 
     * **bag1 = {'marbles' : np.array(["color1", "color2"]), 'probs' : np.array([P(color1), P(color2)])}**
     
-* Create a dictionary for box holding bags and their probability values: 
+* Create a dictionary for the box holding the bags and their probability values: 
 
     * **box  = {'bags' : np.array([bag1, bag2]), 'probs' : np.array([P(bag1),P(bag2)])}**
     
@@ -142,7 +142,7 @@ sample_marble(box)
 
 
 
-#### Create another function `probability_of_colors(color, box, num_samples)` that gets a  given number of samples from `sample_marbles()` and computes the fraction of a marble of desired color
+#### Create another function `probability_of_colors(color, box, num_samples)` that gets a  given number of samples from `sample_marbles()` and computes the fraction of marbles of a desired color
 
 
 ```python
@@ -189,7 +189,7 @@ probability_of_color("black", box, num_samples=100000)
 ## Exercise 2
 
 
-Suppose now we add a third color of marbles to the mix.  Bag 1 now contains 6 white marbles, 4 black marbles, and 5 gray marbles. Bag 2 now contains 3 white marbles, 7 black marbles, and 5 gray marbles.  
+Suppose now we add a third color of marble to the mix.  Bag 1 now contains 6 white marbles, 4 black marbles, and 5 gray marbles. Bag 2 now contains 3 white marbles, 7 black marbles, and 5 gray marbles.  
 
 **The probability of grabbing the first bag from the box is now TWICE the probability of grabbing the second bag.** 
 
@@ -265,5 +265,4 @@ probability_of_color("gray", box, num_samples=100000)
 
 ## Summary 
 
-In this lab, you looked at some more examples of simple problems using law of total probability. You also ran some simulations to solve these problems by continuous random sampling. You learned that you get a result very close to the mathematical solution when using random sampling. This difference is due to randomness, and as your sample size rows you'll see that the difference becomes very small!
-For much complex problems with larger datasets, having an understanding the underlying probabilities can help you solve a lot of optimization problems as you'll learn later.
+In this lab, you looked at some more examples of simple problems using the law of total probability. You also ran some simulations to solve these problems using continuous random sampling. You learned that you get a result very close to the mathematical solution when using random sampling. This difference is due to randomness, and as your sample size grows you'll see that the difference becomes very small! For more complex problems with larger datasets, having an understanding of the underlying probabilities can help you solve a lot of optimization problems as you'll learn later.
