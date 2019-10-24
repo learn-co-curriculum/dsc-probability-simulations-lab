@@ -7,15 +7,12 @@ In this lab, we shall run simulations for simple total probability problems. We 
 
 ## Objectives
 You will be able to:
-* Perform simple random simulations using `numpy`
-* Run simulations with conditional probabilities, total probability, and the product rule
+* Use knowledge of conditional probabilities, total probabilities, and the product rule to run random simulations using numpy
 
 ## Exercise 1
 ### Part 1
 
-Suppose you have two bags of marbles. The first bag contains 6 white marbles and 4 black marbles. The second bag contains 3 white marbles and 7 black marbles. Now suppose you put the two bags in a box. Now if you close your eyes, grab a bag from the box, and then grab a marble from the bag, 
-
-**what is the probability that it is black**? 
+Suppose you have two bags of marbles. The first bag contains 6 white marbles and 4 black marbles. The second bag contains 3 white marbles and 7 black marbles. Now suppose you put the two bags in a box. Now if you close your eyes, grab a bag from the box, and then grab a marble from the bag, **what is the probability that it is black**? 
 
 
 ```python
