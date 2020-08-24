@@ -54,7 +54,7 @@ bag1, bag2, box
 #         dtype=object), 'probs': array([0.5, 0.5])})
 ```
 
-#### Create a function `sample_marble(box)` that randomly chooses a bag from the box and then randomly chooses a marble from the bag 
+Create a function `sample_marble(box)` that randomly chooses a bag from the box and then randomly chooses a marble from the bag 
 
 
 ```python
@@ -68,7 +68,7 @@ def sample_marble(box):
 # 'black' OR 'white'
 ```
 
-#### Create another function `probability_of_colors(color, box, num_samples)` that gets a  given number of samples from `sample_marbles()` and computes the fraction of marbles of a desired color
+Create another function `probability_of_colors(color, box, num_samples)` that gets a  given number of samples from `sample_marbles()` and computes the fraction of marbles of a desired color
 
 
 ```python
