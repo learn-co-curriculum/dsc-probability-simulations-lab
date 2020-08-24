@@ -105,7 +105,7 @@ bag1, bag2, box
 
 
 
-#### Create a function `sample_marble(box)` that randomly chooses a bag from the box and then randomly chooses a marble from the bag 
+Create a function `sample_marble(box)` that randomly chooses a bag from the box and then randomly chooses a marble from the bag 
 
 
 ```python
@@ -139,7 +139,7 @@ sample_marble(box)
 
 
 
-#### Create another function `probability_of_colors(color, box, num_samples)` that gets a  given number of samples from `sample_marbles()` and computes the fraction of marbles of a desired color
+Create another function `probability_of_colors(color, box, num_samples)` that gets a  given number of samples from `sample_marbles()` and computes the fraction of marbles of a desired color
 
 
 ```python
