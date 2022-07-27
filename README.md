@@ -1,4 +1,3 @@
-
 # Simulations with Conditional and Total Probability - Lab
 
 
@@ -6,8 +5,10 @@
 In this lab, we shall run simulations for simple total probability problems. We shall solve these problems by hand and also perform random sampling from a defined probability distribution repeatedly to see if our calculated results match the results of random simulations. 
 
 ## Objectives
+
 You will be able to:
-* Use knowledge of conditional probabilities, total probabilities, and the product rule to run random simulations using numpy
+
+* Use knowledge of conditional probabilities, total probabilities, and the product rule to run random simulations using NumPy
 
 ## Exercise 1
 ### Part 1
